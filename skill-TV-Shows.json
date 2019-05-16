@@ -1,0 +1,2175 @@
+{
+  "name": "TV Shows",
+  "intents": [
+    {
+      "intent": "recommendations",
+      "examples": [
+        {
+          "text": "What current recommendations can you give for drama series on ABC",
+          "mentions": [
+            {
+              "entity": "network",
+              "location": [
+                62,
+                65
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                46,
+                51
+              ]
+            },
+            {
+              "entity": "highest_rated",
+              "location": [
+                13,
+                28
+              ]
+            },
+            {
+              "entity": "current",
+              "location": [
+                5,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what food shows are on today?",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "War shows on Cinemax",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                0,
+                3
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                13,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "text": "other tv shows related to Game of Thrones",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                26,
+                41
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what comedies are currently on CBS?",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                13
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                31,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what is currently on CBS?",
+          "mentions": [
+            {
+              "entity": "network",
+              "location": [
+                21,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what crime shows are on Friday mornings?",
+          "mentions": [
+            {
+              "entity": "date",
+              "location": [
+                24,
+                30
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What shows are on HBO?",
+          "mentions": [
+            {
+              "entity": "network",
+              "location": [
+                18,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what shows are on Netflix?",
+          "mentions": [
+            {
+              "entity": "network",
+              "location": [
+                18,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Shows on FOX",
+          "mentions": [
+            {
+              "entity": "network",
+              "location": [
+                8,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Sports shows on ESPN",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                0,
+                6
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                16,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is on Amazon Prime Video?",
+          "mentions": [
+            {
+              "entity": "network",
+              "location": [
+                11,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Crime shows on CBS",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                0,
+                5
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                15,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Hulu drama shows",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                10
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                0,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "text": "CW drama shows",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                3,
+                8
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                0,
+                2
+              ]
+            }
+          ]
+        },
+        {
+          "text": "CBS drama shows",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                4,
+                9
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Dramas on Netflix",
+          "mentions": [
+            {
+              "entity": "genre",
+              "location": [
+                0,
+                6
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                10,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "are there any good reality shows you can recommend?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                14,
+                18
+              ]
+            },
+            {
+              "entity": "highest_rated",
+              "location": [
+                41,
+                50
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                19,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "text": "are there any good sports shows?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                14,
+                18
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                19,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "best action shows to watch",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                4
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Best cartoons for kids on Disney",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                4
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                13
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                26,
+                32
+              ]
+            }
+          ]
+        },
+        {
+          "text": "best crime tv shows",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                4
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "best tv shows to watch",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                4
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Prime Video recommendations",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                12,
+                27
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                0,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What are some good drama shows on the CW?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                14,
+                18
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                19,
+                24
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                38,
+                40
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what cartoons do you recommend?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                21,
+                30
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what drama shows do you recommend?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                24,
+                33
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what horror shows do you recommend?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                25,
+                34
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the highest rated show on AMC?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                12,
+                25
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                34,
+                37
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what romance shows do you recommend?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                26,
+                35
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what shows do you recommend?",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                18,
+                27
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Top crime shows",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                3
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                4,
+                9
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Top shows on AMC",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                3
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                13,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Are there any horror shows on Hulu now?",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                35,
+                38
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                14,
+                20
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                30,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what shows are on on Thursday nights?",
+          "mentions": [
+            {
+              "entity": "date",
+              "location": [
+                21,
+                29
+              ]
+            },
+            {
+              "entity": "time",
+              "location": [
+                30,
+                35
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is the name of the show that is on ABC Sunday nights at 9 pm?",
+          "mentions": [
+            {
+              "entity": "date",
+              "location": [
+                44,
+                50
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                40,
+                43
+              ]
+            },
+            {
+              "entity": "time",
+              "location": [
+                51,
+                56
+              ]
+            }
+          ]
+        },
+        {
+          "text": "are there any comedies currently on NBC?",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                23,
+                32
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                14,
+                22
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                36,
+                39
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Current shows on NBC",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                0,
+                7
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                17,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Sports shows that are currently airing",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                22,
+                31
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                0,
+                6
+              ]
+            }
+          ]
+        },
+        {
+          "text": "HBO shows on now",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                13,
+                16
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                0,
+                3
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Best drama shows currently on HBO",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                17,
+                26
+              ]
+            },
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                4
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                10
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                30,
+                33
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Crime shows currently on tv",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                12,
+                21
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Best travel shows",
+          "mentions": [
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                4
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Shows that are Science-Fiction on the CW",
+          "mentions": [
+            {
+              "entity": "network",
+              "location": [
+                38,
+                40
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                15,
+                30
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Best current HBO shows on Sundays",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                5,
+                12
+              ]
+            },
+            {
+              "entity": "date",
+              "location": [
+                26,
+                33
+              ]
+            },
+            {
+              "entity": "highest_rated",
+              "location": [
+                0,
+                4
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                13,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Current ABC shows on Tuesdays in the afternoon",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                0,
+                7
+              ]
+            },
+            {
+              "entity": "date",
+              "location": [
+                21,
+                28
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                8,
+                11
+              ]
+            },
+            {
+              "entity": "time",
+              "location": [
+                37,
+                46
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Current children shows on Saturday mornings",
+          "mentions": [
+            {
+              "entity": "current",
+              "location": [
+                0,
+                7
+              ]
+            },
+            {
+              "entity": "date",
+              "location": [
+                26,
+                34
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                8,
+                16
+              ]
+            },
+            {
+              "entity": "time",
+              "location": [
+                35,
+                42
+              ]
+            }
+          ]
+        }
+      ],
+      "description": ""
+    },
+    {
+      "intent": "show_information",
+      "examples": [
+        {
+          "text": "Barry",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Survivor",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "text": "College Football Countdown"
+        },
+        {
+          "text": "Garfield"
+        },
+        {
+          "text": "Tell me more about How I Met Your Mother",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                19,
+                40
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How can I watch Big Bang Theory?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                31
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Orange is the New Black",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                23
+              ]
+            }
+          ]
+        },
+        {
+          "text": "More information about Silicon Valley",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                23,
+                37
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What channel is The 100 on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                23
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How can I watch Game of Thrones?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                31
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Information about Community",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                18,
+                27
+              ]
+            }
+          ]
+        },
+        {
+          "text": "tell me more information about The Walking Dead",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                31,
+                47
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Information about Friends",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                18,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what channel is The Walking Dead on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                32
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Is Friends still on tv?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                3,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what time is Big Bang Theory on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                13,
+                28
+              ]
+            }
+          ]
+        },
+        {
+          "text": "when is The Goldbergs on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what channel is It's Always Sunny in Philadelphia on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                49
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Is Stranger Things still running?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                3,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "text": "tell me more information about 13 Reasons Why",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                31,
+                45
+              ]
+            }
+          ]
+        },
+        {
+          "text": "when is Family Guy on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                18
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What time is The Simpsons on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                13,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Where can I watch The Man in the High Castle?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                18,
+                44
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Where can I watch New Girl?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                18,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What time is Black Mirror on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                13,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How can I watch Spongebob?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Where can I watch Jane the Virgin?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                18,
+                33
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What channel is Cops on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                20
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Tell me more about Judge Judy",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                19,
+                29
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Is Dora the Explorer still on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                3,
+                21
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is The Walking Dead about?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                24
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is Maury about?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                13
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is Bob the Builder about?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                23
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Fuller House",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Scooby Doo",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "M*A*S*H",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                7
+              ]
+            }
+          ]
+        },
+        {
+          "text": "The Office",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Is That 70's Show still running?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                3,
+                17
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Better Call Saul",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "When is Jeopardy on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "How can I watch Black Mirror?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                28
+              ]
+            }
+          ]
+        },
+        {
+          "text": "South Park",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                10
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Seinfeld",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Game of Thrones",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                15
+              ]
+            }
+          ]
+        },
+        {
+          "text": "CBS Morning News",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                16
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Last Week Tonight with John Oliver",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What is Veep about?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                12
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What network is Westworld on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                16,
+                25
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Homeland",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                8
+              ]
+            }
+          ]
+        },
+        {
+          "text": "The Deuce",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                9
+              ]
+            }
+          ]
+        }
+      ],
+      "description": ""
+    }
+  ],
+  "entities": [
+    {
+      "entity": "date",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Tuesday",
+          "synonyms": [
+            "Tuesdays"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Sunday",
+          "synonyms": [
+            "Sundays"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Thursday",
+          "synonyms": [
+            "Thursdays"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Monday",
+          "synonyms": [
+            "Mondays"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Wednesday",
+          "synonyms": [
+            "Wednesdays"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Friday",
+          "synonyms": [
+            "Fridays"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Saturday",
+          "synonyms": [
+            "Saturdays"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "genre",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "sports",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "crime",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "reality",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "romance",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "action",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "horror",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "drama",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "children",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "comedy",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "cartoon",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "food ",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "War",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "travel",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Science-Fiction",
+          "synonyms": [
+            "sci-fi",
+            "Science Fiction",
+            "sci fi"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "sys-time",
+      "values": []
+    },
+    {
+      "entity": "current",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "currently",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "now",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "are on",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Current",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "network",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "ESPN",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": " FOX",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "AMC",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "CW",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Amazon Prime Video",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Hulu",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Netflix",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "HBO",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "ABC",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Cinemax",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "CBS",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "NBC",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Prime Video",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Disney",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "shows",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "Homeland",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "CBS Morning News",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Deuce",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Maury",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Game of Thrones",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Big Bang Theory",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Community",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Walking Dead",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Friends",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Silicon Valley",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Goldbergs",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "It's Always Sunny in Philadelphia",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The 100",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Stranger Things",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Simpsons",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "13 Reasons Why",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Family Guy",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Man in the High Castle",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "New Girl",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Black Mirror",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Spongebob",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Jane the Virgin",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Cops",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Judge Judy",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Dora the Explorer ",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Scooby Doo",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Bob the Builder",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Fuller House",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "M*A*S*H",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Orange is the New Black",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Office",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "That 70's Show",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Better Call Saul",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Jeopardy",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "How I Met Your Mother",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Seinfeld",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "South Park",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Last Week Tonight with John Oliver",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Survivor",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Veep",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Westworld",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Barry",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "highest_rated",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "recommend",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Top",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "highest rated",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "recommendations",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "best",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "good",
+          "synonyms": []
+        }
+      ],
+      "fuzzy_match": true
+    },
+    {
+      "entity": "time",
+      "values": [
+        {
+          "type": "synonyms",
+          "value": "morning",
+          "synonyms": [
+            "mornings"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "night",
+          "synonyms": [
+            "evening"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "afternoon",
+          "synonyms": [
+            "daytime"
+          ]
+        }
+      ],
+      "fuzzy_match": true
+    }
+  ],
+  "language": "en",
+  "metadata": {
+    "api_version": {
+      "major_version": "v1",
+      "minor_version": "2018-09-20"
+    }
+  },
+  "description": "",
+  "dialog_nodes": [
+    {
+      "type": "standard",
+      "title": "Show Information",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let me see what I can find. I'll be back..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#show_information || @shows",
+      "dialog_node": "node_2_1556130917742",
+      "previous_sibling": "node_1_1556130222962"
+    },
+    {
+      "type": "standard",
+      "title": "Anything else",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "What you are saying sounds like it is from a galaxy far, far away. Can you try rewording or asking something else about TV shows?"
+              },
+              {
+                "text": "What'choo talkin' 'bout, Willis? Can you try rewording or asking something else about TV shows?"
+              },
+              {
+                "text": "Houston, we have a problem. I am having trouble understanding what you are saying. Can you try rewording or asking something else about TV shows?"
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "random"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "anything_else",
+      "dialog_node": "Anything else",
+      "previous_sibling": "node_2_1556130917742"
+    },
+    {
+      "type": "standard",
+      "title": "Recommendations",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Let me find some TV shows for you. To infinity and beyond..."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "#recommendations",
+      "dialog_node": "node_1_1556130222962",
+      "previous_sibling": "Welcome"
+    },
+    {
+      "type": "standard",
+      "title": "Welcome",
+      "output": {
+        "generic": [
+          {
+            "values": [
+              {
+                "text": "Hi! I am Vincent. Ask me questions for information about TV shows or I can make recommendations of TV shows based on what you are interested in."
+              }
+            ],
+            "response_type": "text",
+            "selection_policy": "sequential"
+          }
+        ]
+      },
+      "metadata": {},
+      "conditions": "welcome",
+      "dialog_node": "Welcome"
+    }
+  ],
+  "workspace_id": "746e10a8-dc6d-4b63-9ce2-f6df708f77db",
+  "counterexamples": [
+    {
+      "text": "Squirrels are animals"
+    }
+  ],
+  "system_settings": {
+    "tooling": {
+      "store_generic_responses": true
+    }
+  },
+  "learning_opt_out": false,
+  "status": "Available"
+}
