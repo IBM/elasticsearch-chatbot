@@ -1,0 +1,14 @@
+{
+  "name": "app",
+  "version": "1.0.0",
+  "dependencies": {
+    "async": "^2.6.2",
+    "cors": "^2.8.5",
+    "express": "^4.16.4",
+    "request": "^2.88.0",
+    "watson-developer-cloud": "^4.0.1"
+  },
+  "scripts": {
+    "start": "node ./bin/www"
+  }
+}
