@@ -41,6 +41,13 @@
           "text": "what food shows are on today?",
           "mentions": [
             {
+              "entity": "date",
+              "location": [
+                23,
+                28
+              ]
+            },
+            {
               "entity": "genre",
               "location": [
                 5,
@@ -64,6 +71,89 @@
               "location": [
                 13,
                 20
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what comedy shows are on ABC tonight?",
+          "mentions": [
+            {
+              "entity": "time",
+              "location": [
+                29,
+                36
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                25,
+                28
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                11
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what shows are on tomorrow?",
+          "mentions": [
+            {
+              "entity": "date",
+              "location": [
+                18,
+                26
+              ]
+            }
+          ]
+        },
+        {
+          "text": "What shows are on the Food Network today?",
+          "mentions": [
+            {
+              "entity": "date",
+              "location": [
+                35,
+                40
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                22,
+                34
+              ]
+            }
+          ]
+        },
+        {
+          "text": "what crime shows are on Friday mornings?",
+          "mentions": [
+            {
+              "entity": "date",
+              "location": [
+                24,
+                30
+              ]
+            },
+            {
+              "entity": "time",
+              "location": [
+                31,
+                38
+              ]
+            },
+            {
+              "entity": "genre",
+              "location": [
+                5,
+                10
               ]
             }
           ]
@@ -107,25 +197,6 @@
               "location": [
                 21,
                 24
-              ]
-            }
-          ]
-        },
-        {
-          "text": "what crime shows are on Friday mornings?",
-          "mentions": [
-            {
-              "entity": "date",
-              "location": [
-                24,
-                30
-              ]
-            },
-            {
-              "entity": "genre",
-              "location": [
-                5,
-                10
               ]
             }
           ]
@@ -953,13 +1024,13 @@
       "intent": "show_information",
       "examples": [
         {
-          "text": "Barry",
+          "text": "When is the NBC news on?",
           "mentions": [
             {
               "entity": "shows",
               "location": [
-                0,
-                5
+                12,
+                20
               ]
             }
           ]
@@ -977,10 +1048,16 @@
           ]
         },
         {
-          "text": "College Football Countdown"
-        },
-        {
-          "text": "Garfield"
+          "text": "When is Dateline on?",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                8,
+                16
+              ]
+            }
+          ]
         },
         {
           "text": "Tell me more about How I Met Your Mother",
@@ -1533,6 +1610,24 @@
               ]
             }
           ]
+        },
+        {
+          "text": "Barry",
+          "mentions": [
+            {
+              "entity": "shows",
+              "location": [
+                0,
+                5
+              ]
+            }
+          ]
+        },
+        {
+          "text": "Garfield"
+        },
+        {
+          "text": "College Football Countdown"
         }
       ],
       "description": ""
@@ -1542,13 +1637,6 @@
     {
       "entity": "date",
       "values": [
-        {
-          "type": "synonyms",
-          "value": "Tuesday",
-          "synonyms": [
-            "Tuesdays"
-          ]
-        },
         {
           "type": "synonyms",
           "value": "Sunday",
@@ -1561,6 +1649,13 @@
           "value": "Thursday",
           "synonyms": [
             "Thursdays"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "Tuesday",
+          "synonyms": [
+            "Tuesdays"
           ]
         },
         {
@@ -1590,6 +1685,21 @@
           "synonyms": [
             "Saturdays"
           ]
+        },
+        {
+          "type": "synonyms",
+          "value": "today",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "tomorrow",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "yesterday",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true
@@ -1599,17 +1709,7 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "sports",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "crime",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "reality",
+          "value": "drama",
           "synonyms": []
         },
         {
@@ -1629,7 +1729,7 @@
         },
         {
           "type": "synonyms",
-          "value": "drama",
+          "value": "reality",
           "synonyms": []
         },
         {
@@ -1649,8 +1749,15 @@
         },
         {
           "type": "synonyms",
-          "value": "food ",
+          "value": "sports",
           "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "food ",
+          "synonyms": [
+            "cooking"
+          ]
         },
         {
           "type": "synonyms",
@@ -1670,6 +1777,11 @@
             "Science Fiction",
             "sci fi"
           ]
+        },
+        {
+          "type": "synonyms",
+          "value": "crime",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true
@@ -1683,6 +1795,11 @@
       "values": [
         {
           "type": "synonyms",
+          "value": "Current",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
           "value": "currently",
           "synonyms": []
         },
@@ -1694,11 +1811,6 @@
         {
           "type": "synonyms",
           "value": "are on",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "Current",
           "synonyms": []
         }
       ],
@@ -1714,17 +1826,22 @@
         },
         {
           "type": "synonyms",
-          "value": " FOX",
+          "value": "Disney",
           "synonyms": []
         },
         {
           "type": "synonyms",
-          "value": "AMC",
+          "value": "Prime Video",
           "synonyms": []
         },
         {
           "type": "synonyms",
-          "value": "CW",
+          "value": "NBC",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "CBS",
           "synonyms": []
         },
         {
@@ -1749,32 +1866,32 @@
         },
         {
           "type": "synonyms",
+          "value": " FOX",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
           "value": "ABC",
           "synonyms": []
         },
         {
           "type": "synonyms",
+          "value": "AMC",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "CW",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Food Network",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
           "value": "Cinemax",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "CBS",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "NBC",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "Prime Video",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
-          "value": "Disney",
           "synonyms": []
         }
       ],
@@ -1785,17 +1902,12 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "Homeland",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
           "value": "CBS Morning News",
           "synonyms": []
         },
         {
           "type": "synonyms",
-          "value": "The Deuce",
+          "value": "Survivor",
           "synonyms": []
         },
         {
@@ -1975,11 +2087,6 @@
         },
         {
           "type": "synonyms",
-          "value": "Survivor",
-          "synonyms": []
-        },
-        {
-          "type": "synonyms",
           "value": "Veep",
           "synonyms": []
         },
@@ -1992,6 +2099,31 @@
           "type": "synonyms",
           "value": "Barry",
           "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "The Deuce",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "NBC news",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Dateline",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "ABC News",
+          "synonyms": []
+        },
+        {
+          "type": "synonyms",
+          "value": "Homeland",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true
@@ -2001,7 +2133,7 @@
       "values": [
         {
           "type": "synonyms",
-          "value": "recommend",
+          "value": "good",
           "synonyms": []
         },
         {
@@ -2026,7 +2158,7 @@
         },
         {
           "type": "synonyms",
-          "value": "good",
+          "value": "recommend",
           "synonyms": []
         }
       ],
@@ -2035,13 +2167,6 @@
     {
       "entity": "time",
       "values": [
-        {
-          "type": "synonyms",
-          "value": "morning",
-          "synonyms": [
-            "mornings"
-          ]
-        },
         {
           "type": "synonyms",
           "value": "night",
@@ -2055,6 +2180,18 @@
           "synonyms": [
             "daytime"
           ]
+        },
+        {
+          "type": "synonyms",
+          "value": "morning",
+          "synonyms": [
+            "mornings"
+          ]
+        },
+        {
+          "type": "synonyms",
+          "value": "tonight",
+          "synonyms": []
         }
       ],
       "fuzzy_match": true

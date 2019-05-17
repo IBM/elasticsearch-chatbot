@@ -4,6 +4,8 @@ var async = require('async');
 const ELASTIC_BASE_URL = process.env.ELASTIC_BASE_URL;
 const TV_SHOW_API = "http://api.tvmaze.com/shows/";
 
+const daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
 function getShowInformation(entities) {
     return new Promise(function(resolve, reject) {
         var query = "";
@@ -53,6 +55,7 @@ function getRecommendations(entities) {
         var networks = "";
         var days = "";
         var times = "";
+        var today = new Date();
 
         for (var entity = 0; entity < entities.length; entity++) {
             if (entities[entity].entity == "genre") {
@@ -66,16 +69,31 @@ function getRecommendations(entities) {
                 }
                 networks = networks + entities[entity].value;
             } else if (entities[entity].entity == "date") {
+                status = "Running";
+
                 if (days) {
                     days = days + " OR ";
                 }
-                days = days + entities[entity].value;
+
+                if (entities[entity].value == "today") {
+                    days = days + daysOfWeek[today.getDay()];
+                } else if (entities[entity].value == "yesterday") {
+                    days = days + daysOfWeek[(today.getDay()-1)%7];
+                } else if (entities[entity].value == "tomorrow") {
+                    days = days + daysOfWeek[(today.getDay()+1)%7];
+                } else {
+                    days = days + entities[entity].value;
+                }
             } else if (entities[entity].entity == "sys-time") {
+                status = "Running";
+
                 if (times) {
                     times = times + " OR ";
                 }
                 times = times + entities[entity].value.split(":")[0];
             } else if (entities[entity].entity == "time") {
+                status = "Running";
+
                 if (times) {
                     times = times + " OR ";
                 }
@@ -98,7 +116,14 @@ function getRecommendations(entities) {
                             times = times + time + " OR ";
                         }
                     }
-                } else if (entities[entity].value == "night") {
+                } else if (entities[entity].value == "night" || entities[entity].value == "tonight") {
+                    if (entities[entity].value == "tonight") {
+                        if (days) {
+                            days = days + " OR ";
+                        }
+                        days = days + daysOfWeek[today.getDay()];
+                    }
+
                     for (var time = 18; time < 24; time++) {
                         if (time == 23) {
                             times = times + time;
@@ -141,7 +166,7 @@ function getRecommendations(entities) {
         body = {
             "query": {
                 "query_string": {
-                    "query": "(network.name:(" + networks + ") OR webChannel.name:(" + networks + ")) AND schedule.days:(" + days + ") AND status:(" + status + ") AND schedule.time:(" + times + ") AND genres:(" + genres + ")"
+                    "query": "(network.name:(" + networks + ") OR webChannel.name:(" + networks + ")) AND schedule.days:(" + days + ") AND status:(" + status + ") AND schedule.time:(" + times + ") AND (genres:(" + genres + ") OR type:("+ genres + "))"
                 }
             }
         }
