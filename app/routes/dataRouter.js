@@ -1,3 +1,7 @@
+/**
+ * Router for populating Elasticsearch Database with data
+ */
+
 var express = require('express');
 var elastic = require('../services/elastic');
 var router = express.Router();

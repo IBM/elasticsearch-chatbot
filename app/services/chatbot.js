@@ -1,3 +1,7 @@
+/**
+ * Interacts with Watson Assistant
+ */
+
 const elastic = require('./elastic');
 const AssistantV2 = require('watson-developer-cloud/assistant/v2');
 
@@ -10,6 +14,9 @@ const assistant = new AssistantV2({
 
 var sessionId = "";
 
+/**
+ * Creates a new session for interacting with Watson Assistant
+ */
 function startSession() {
     return new Promise(function(resolve,reject) {
         assistant.createSession({
@@ -23,6 +30,11 @@ function startSession() {
     })
 }
 
+/**
+ * Handles checking if there is a vailf session before senidng the message to Watson Assistant
+ * 
+ * @param {String} message 
+ */
 function chat(message) {
     return new Promise(function(resolve, reject) {
         if (!sessionId) {
@@ -39,6 +51,11 @@ function chat(message) {
     })
 }
 
+/**
+ * Sends the message to Watson Assistant and creates the appropriate response
+ * 
+ * @param {String} message 
+ */
 function sendMessage(message) {
     return new Promise(function(resolve, reject) {
         assistant.message({

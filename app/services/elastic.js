@@ -1,3 +1,7 @@
+/**
+ * Interacts with the Elasticsearch Database
+ */
+
 var request = require('request');
 var async = require('async');
 
@@ -6,6 +10,11 @@ const TV_SHOW_API = "http://api.tvmaze.com/shows/";
 
 const daysOfWeek = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
 
+/**
+ * Queries the Elasticsearch Database for information about a show
+ * 
+ * @param {Object} entities 
+ */
 function getShowInformation(entities) {
     return new Promise(function(resolve, reject) {
         var query = "";
@@ -46,6 +55,11 @@ function getShowInformation(entities) {
 	})
 }
 
+/**
+ * Queries the Elasticsearch Database for show recommendations
+ * 
+ * @param {Object} entities 
+ */
 function getRecommendations(entities) {
     return new Promise(function(resolve, reject) {
         var body;
@@ -196,6 +210,11 @@ function getRecommendations(entities) {
 	})
 }
 
+/**
+ * Populates the Elasticsearch database
+ * 
+ * @param {Number} showCount 
+ */
 function populateDatabase(showCount) {
     return new Promise(function(resolve, reject) {
         var showAdded;
@@ -285,6 +304,12 @@ function populateDatabase(showCount) {
     })
 }
 
+/**
+ * Adds a show to the Elasticsearch database
+ * 
+ * @param {Object} show 
+ * @param {Number} showIndex 
+ */
 function addShow(show, showIndex) {
     return new Promise(function(resolve, reject) {
         request.post({url: ELASTIC_BASE_URL + "/shows/show/"+showIndex, body: show, json: true}, function (error, response, body) {

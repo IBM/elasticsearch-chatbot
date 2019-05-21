@@ -1,5 +1,4 @@
 import React from 'react';
-import './App.css';
 import { ChatFeed, Message } from 'react-chat-ui';
 import {Button, Form, FormGroup, Input, Container, Row, Col} from "reactstrap";
 

@@ -1,3 +1,7 @@
+/**
+ * Router for Chatbot
+ */
+
 var express = require('express');
 var chatbot = require('../services/chatbot');
 var router = express.Router();

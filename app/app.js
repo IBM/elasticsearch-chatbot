@@ -1,3 +1,7 @@
+/**
+ * Main app.js file for the chatbot
+ */
+
 var express = require("express");
 var cors = require('cors');
 var bodyParser = require('body-parser');
