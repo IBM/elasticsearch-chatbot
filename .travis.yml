@@ -1,0 +1,14 @@
+---
+language: node_js
+node_js: "10"
+env:
+  global:
+    - ELASTIC_BASE_URL: test
+    - WATSON_VERSION: test
+    - WATSON_USERNAME: test
+    - WATSON_PASSWORD: test
+    - WATSON_API_URL: test
+    - WATSON_ASSISTANT_ID: test
+jobs:
+  include:
+    script: ./travis-tests/build.sh
