@@ -110,7 +110,10 @@ cd elasticsearch-chatbot
 
 10. To deploy the services to IBM Cloud Foundry, go to one of the dashboards of the apps provisioned from Step 1 and follow the *Getting Started* instructions for connecting and logging in to IBM Cloud from the console (Step 3 of *Getting Started*). Once logged in, run `ibmcloud app push` from the root directory.
 
-11. Use `https://<WEB-NAME>.<WEB-DOMAIN>` to access the React UI.
+11. To populate the Elasticsearch Database, run `curl https://<APP-NAME>.<APP-DOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '{"total": <TOTAL>}'` Total is optional and if used, refers to the maximum potential shows to add to the database.
+> NOTE: This chatbot only works for US shows and streaming services. There are maximum 42,000+ shows available through the API used.
+
+12. Use `https://<WEB-NAME>.<WEB-DOMAIN>` to access the React UI.
 
 # License
 

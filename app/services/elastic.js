@@ -27,7 +27,7 @@ function getShowInformation(entities) {
 
                 var words = entities[entity].value.split(" ");
                 for (var word = 0; word < words.length; word++) {
-                    query = query + words[word] + "~1^" + entities[entity].confidence*10;
+                    query = query + words[word] + "~1^" + entities[entity].confidence*10 + " ";
                 }
             }
         }
@@ -220,44 +220,48 @@ function populateDatabase(showCount) {
         var showAdded;
         var totalShowsAdded = 0;
         var totalShowsNotAdded = 0;
+        var show = 1;
 
         if (showCount) {
-            for (var show = 1; show <= showCount; show++) {
-                request(TV_SHOW_API+show, function (error, response, body) {
-                    if (!error && response.statusCode == 200) {
-                        body = JSON.parse(body);
+            async.whilst(
+                function () { return show <= showCount; },
+                function (next) {
+                    request(TV_SHOW_API+show, function (error, response, body) {
+                        if (!error && response.statusCode == 200) {
+                            body = JSON.parse(body);
 
-                        var showToAdd = false;
+                            var showToAdd = false;
 
-                        if (body.network) {
-                            if (body.network.country.name == "United States") {
-                                showToAdd = true;
+                            if (body.network) {
+                                if (body.network.country.name == "United States") {
+                                    showToAdd = true;
+                                }
+                            } else {
+                                if (body.language == "English" && body.webChannel) {
+                                    showToAdd = true;
+                                }
                             }
-                        } else {
-                            if (body.language == "English" && body.webChannel) {
-                                showToAdd = true;
+
+                            if (showToAdd) {
+                                addShow(body, body.id).then(function(showAdded) {
+                                    if (showAdded) {
+                                        totalShowsAdded = totalShowsAdded + 1;
+                                    } else {
+                                        totalShowsNotAdded = totalShowsNotAdded + 1;
+                                    }
+                                });
                             }
                         }
-
-                        if (showToAdd) {
-                            addShow(body, body.id).then(function(showAdded) {
-                                if (showAdded) {
-                                    totalShowsAdded = totalShowsAdded + 1;
-                                } else {
-                                    totalShowsNotAdded = totalShowsNotAdded + 1;
-                                }
-
-                                if (totalShowsAdded + totalShowsNotAdded == showCount) {
-                                    resolve(totalShowsAdded);
-                                }
-                            });
-                        }
-                    }
-                });
-            }
+                        show = show + 1;
+                        next();
+                    });
+                },
+                function (err, n) {
+                    return resolve(totalShowsAdded);
+                }
+            );
         } else {
             var errorStreak = 0;
-            var show = 1;
             var complete = false;
 
             async.whilst(
