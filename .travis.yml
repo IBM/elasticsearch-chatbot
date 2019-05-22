@@ -11,7 +11,8 @@ env:
     - WATSON_ASSISTANT_ID: test
 before_script:
   - "cd app && npm install"
-  - "cd web && npm install"
+  - "cd ../web && npm install"
+  - "cd .."
 jobs:
   include:
     script: ./travis-tests/build.sh
