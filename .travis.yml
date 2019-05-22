@@ -9,6 +9,8 @@ env:
     - WATSON_PASSWORD: test
     - WATSON_API_URL: test
     - WATSON_ASSISTANT_ID: test
+before_install:
+  - git clone https://github.com/IBM/pattern-ci
 before_script:
   - "cd app && npm install"
   - "cd ../web && npm install"
