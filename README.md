@@ -1,3 +1,5 @@
+[![Build Status](https://travis-ci.com/IBM/elasticsearch-chatbot.svg?branch=master)](https://travis-ci.com/IBM/elasticsearch-chatbot)
+
 # Elasticsearch Chatbot
 
 In this Code Pattern, we will create a chatbot using Watson Assistant, Elasticsearch, and Node.js on Cloud Foundry. This chatbot works with TV shows by making recommendations and providing show information.

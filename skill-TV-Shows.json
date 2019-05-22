@@ -8,17 +8,10 @@
           "text": "What current recommendations can you give for drama series on ABC",
           "mentions": [
             {
-              "entity": "network",
+              "entity": "current",
               "location": [
-                62,
-                65
-              ]
-            },
-            {
-              "entity": "genre",
-              "location": [
-                46,
-                51
+                5,
+                12
               ]
             },
             {
@@ -29,10 +22,17 @@
               ]
             },
             {
-              "entity": "current",
+              "entity": "genre",
               "location": [
-                5,
-                12
+                46,
+                51
+              ]
+            },
+            {
+              "entity": "network",
+              "location": [
+                62,
+                65
               ]
             }
           ]
