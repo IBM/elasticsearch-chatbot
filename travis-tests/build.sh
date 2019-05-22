@@ -9,7 +9,7 @@ main(){
     if ! cd ../app; then
         test_failed "$0"
     fi
-    if ! npm start; then
+    if ! npm test; then
     	test_failed "$0"
     fi
 
