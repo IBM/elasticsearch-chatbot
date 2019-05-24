@@ -1,0 +1,46 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: elasticsearch-chatbot-app
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: elasticsearch-chatbot-app-deployment
+        version: v1
+    spec:
+      containers:
+        - name: elasticsearch-chatbot-app
+          image: maxshapiro32/elasticsearch-chatbot-app
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 5000
+          env:
+            - name: ELASTIC_BASE_URL
+              value: <ELASTICSEARCH_ENDPOINT>
+            - name: WATSON_VERSION
+              value: 2019-02-28
+            - name: WATSON_USERNAME
+              value: <WATSON_ASSISTANT_USERNAME>
+            - name: WATSON_PASSWORD
+              value: <WATSON_ASSISTANT_PASSWORD>
+            - name: WATSON_API_URL
+              value: <WATSON_ASSISTANT_SERVICE_ENDPOINT>
+            - name: WATSON_ASSISTANT_ID
+              value: <WATSON_ASSISTANT_ID>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch-chatbot-app-service
+spec:
+  ports:
+    - port: 5000
+      targetPort: 5000
+      nodePort: 32001
+      name: http
+  type: NodePort
+  selector:
+    name: elasticsearch-chatbot-app-deployment

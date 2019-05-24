@@ -1,20 +1,8 @@
 ---
 language: node_js
 node_js: "10"
-env:
-  global:
-    - ELASTIC_BASE_URL: test
-    - WATSON_VERSION: test
-    - WATSON_USERNAME: test
-    - WATSON_PASSWORD: test
-    - WATSON_API_URL: test
-    - WATSON_ASSISTANT_ID: test
 before_install:
   - git clone https://github.com/IBM/pattern-ci
-before_script:
-  - "cd app && npm install"
-  - "cd ../web && npm install"
-  - "cd .."
 jobs:
   include:
-    script: ./travis-tests/build.sh
+    script: ./travis-tests/docker-compose.sh

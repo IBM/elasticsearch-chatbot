@@ -1,0 +1,23 @@
+---
+apiVersion: extensions/v1beta1
+kind: Ingress
+metadata:
+  annotations:
+    ingress.bluemix.net/redirect-to-https: "True"
+  name: ingress-elasticsearch-chatbot-app
+spec:
+  tls:
+    - hosts:
+        - <IP_OR_SUBDOMAIN>
+      secretName: elasticsearch-chatbot
+  backend:
+    serviceName: elasticsearch-chatbot-app-service
+    servicePort: 5000
+  rules:
+    - host: <IP_OR_SUBDOMAIN>
+      http:
+        paths:
+          - path: /
+            backend:
+              serviceName: elasticsearch-chatbot-app-service
+              servicePort: 5000

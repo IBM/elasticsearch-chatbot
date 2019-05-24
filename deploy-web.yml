@@ -1,0 +1,36 @@
+---
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: elasticsearch-chatbot-web
+spec:
+  replicas: 1
+  template:
+    metadata:
+      labels:
+        name: elasticsearch-chatbot-web-deployment
+        version: v1
+    spec:
+      containers:
+        - name: elasticsearch-chatbot-web
+          image: maxshapiro32/elasticsearch-chatbot-web
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 3000
+          env:
+            - name: REACT_APP_API_BASE_URL
+              value: <SCHEME>://<IP_OR_SUBDOMAIN>
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: elasticsearch-chatbot-web-service
+spec:
+  ports:
+    - port: 3000
+      targetPort: 3000
+      nodePort: 32000
+      name: http
+  type: NodePort
+  selector:
+    name: elasticsearch-chatbot-web-deployment

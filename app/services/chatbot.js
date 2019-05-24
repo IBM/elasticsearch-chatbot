@@ -34,19 +34,26 @@ function startSession() {
  * Handles checking if there is a vailf session before senidng the message to Watson Assistant
  * 
  * @param {String} message 
+ * @param {Boolean} travis
  */
-function chat(message) {
+function chat(message, travis) {
     return new Promise(function(resolve, reject) {
-        if (!sessionId) {
-            startSession().then(function() {
+        if (travis) {
+            travisTest(message).then(function(response) {
+                resolve(response);
+            });
+        } else {
+            if (!sessionId) {
+                startSession().then(function() {
+                    sendMessage(message).then(function(response) {
+                        resolve(response);
+                    });
+                })
+            } else {
                 sendMessage(message).then(function(response) {
                     resolve(response);
                 });
-            })
-        } else {
-            sendMessage(message).then(function(response) {
-                resolve(response);
-            });
+            }
         }
     })
 }
@@ -138,6 +145,52 @@ function sendMessage(message) {
             }
         });
     })  
+}
+
+/**
+ * Testing Travis CI (Only app and elasticsearch database)
+ * 
+ * @param {String} message 
+ */
+function travisTest(message) {
+    return new Promise(function(resolve, reject) {
+        var entity = [{
+            entity: "shows",
+            value: message,
+            confidence: 0.9
+        }];
+        var jsonResponse = {generic: "This is output for Travis CI testing"};
+        var chatbotResponse = "";
+
+        elastic.getShowInformation(entity).then(function(showInformation) {
+            var summary = "\nSummary of " + showInformation.name + ": " + showInformation.summary.replace(/(<([^>]+)>)/ig,"");
+
+            if (showInformation.status == "Ended") {
+                chatbotResponse = showInformation.name + " has ended and is not currently airing. However, there may be reruns on or it could be streaming somewhere.";
+            } else {
+                var time = new Date('January 1, 2000 ' + showInformation.schedule.time);
+                var days = "";
+
+                for (var day = 0; day < showInformation.schedule.days.length; day++) {
+                    if (showInformation.schedule.days.length == 1) {
+                        days = showInformation.schedule.days[day];
+                    } else if (day == showInformation.schedule.days.length - 1) {
+                        days = days +  "& " + showInformation.schedule.days[day];
+                    } else {
+                        days = days + showInformation.schedule.days[day] + ", ";
+                    }
+                }
+
+                chatbotResponse = showInformation.name + " is on at " + time.toLocaleTimeString('en-US') + " on " + days + " on " + showInformation.network.name;
+            }
+
+            jsonResponse.data = chatbotResponse + summary;
+            resolve(jsonResponse);
+        }).catch(function(error) {
+            jsonResponse.data = "Houston, we have a problem. I could not locate any shows that matched what you specified. Can you try rewording?";
+            resolve(jsonResponse);
+        });
+    })
 }
 
 module.exports.chat = chat;
