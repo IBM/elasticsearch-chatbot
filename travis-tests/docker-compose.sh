@@ -1,7 +1,10 @@
 #!/bin/bash -e
 source "$(dirname "$0")"/../pattern-ci/scripts/resources.sh
 main(){
-    if ! docker-compose up -d; then
+    if ! docker-compose up --build -d; then
+        test_failed "$0"
+    fi
+    if ! sleep 30; then
         test_failed "$0"
     fi
     if ! docker-compose ps; then
