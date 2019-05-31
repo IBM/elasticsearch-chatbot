@@ -13,6 +13,9 @@ main(){
     if ! curl localhost:5000/api/v1/data -X PUT -H "Content-Type: application/json" -d '@data/small-dataset.json'; then
         test_failed "$0"
     fi
+    if ! sleep 10; then
+        test_failed "$0"
+    fi
     if ! curl localhost:5000/api/v1/chat -X POST -H "Content-Type: application/json" -d '{"message": "Game of Thrones", "travis": true}'; then
         test_failed "$0"
     fi

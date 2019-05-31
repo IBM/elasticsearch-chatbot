@@ -181,7 +181,7 @@ kubectl apply -f ingress-web.yml
 *  Run `curl https://api.<INGRESS_SUBDOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '{"total": <TOTAL>}'` Total is optional and if used, refers to the maximum number of potential shows to add to the database.
 > NOTE: This chatbot only works for US shows and streaming services. There are maximum 42,000+ shows available through the API used.
 
-* Use one of the provided data sets in `/data` by running `curl https://api.<INGRESS_SUBDOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '@data/<DATA_FILE>'` DATA_FILE can be either `small-dataset.json` or `large-dataset.json`
+* Use one of the provided data sets in `/data` by running `curl https://api.<INGRESS_SUBDOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '@data/<DATA_FILE>'` `<DATA_FILE>` can be either `small-dataset.json` or `large-dataset.json`
 
 10. Use `https://<INGRESS_SUBDOMAIN>` to access the React UI.
 
@@ -261,7 +261,7 @@ kubectl apply -f ingress-web.yml
 *  Run `curl https://<APP-NAME>.<APP-DOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '{"total": <TOTAL>}'` Total is optional and if used, refers to the maximum number of potential shows to add to the database.
 > NOTE: This chatbot only works for US shows and streaming services. There are maximum 42,000+ shows available through the API used.
 
-* Use one of the provided data sets in `/data` by running `curl https://<APP-NAME>.<APP-DOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '@data/<DATA_FILE>'` DATA_FILE can be either `small-dataset.json` or `large-dataset.json`
+* Use one of the provided data sets in `/data` by running `curl https://<APP-NAME>.<APP-DOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '@data/<DATA_FILE>'` `<DATA_FILE>` can be either `small-dataset.json` or `large-dataset.json`
 
 12. Use `https://<WEB-NAME>.<WEB-DOMAIN>` to access the React UI.
 
