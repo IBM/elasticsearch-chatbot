@@ -2,7 +2,14 @@
 
 # Elasticsearch Chatbot
 
-In this Code Pattern, we will create a chatbot using Watson Assistant, Elasticsearch, and Node.js. The Node.js application can run on either Kubernetes or Cloud Foundry. This chatbot uses TV shows data to make recommendations and provide show information.
+> NOTE: This code pattern is based on the chatbot that is being used for the [IBM Developer mobile application](https://itunes.apple.com/us/app/ibm-developer/id1450996651).
+
+In this Code Pattern, we will create a chatbot using Watson Assistant, Elasticsearch, and Node.js. The Node.js application can run on either Kubernetes or Cloud Foundry. This chatbot uses TV shows data from [TV Maze](http://www.tvmaze.com/api) to make recommendations and provide show information.
+
+After completing this pattern, you will understand how to:
+
+* Create a chatbot end to end
+* Deploy and run a Node.js application on Kubernetes and/or Cloud Foundry
 
 # Architecture
 
@@ -185,6 +192,13 @@ kubectl apply -f ingress-web.yml
 
 10. Use `https://<INGRESS_SUBDOMAIN>` to access the React UI.
 
+11. Here are some example messages to send to the chatbot:
+
+* `What comedy shows are on ABC tonight?`
+* `What drama shows do you recommend?`
+* `Tell me more about Game of Thrones`
+* `When is Jeopardy on?`
+
 ### Cloud Foundry
 
 1. Provision two [SDK for Node.js](https://cloud.ibm.com/catalog/starters/sdk-for-nodejs) applications. One will be for `./app` and the other will be for `./web`.
@@ -264,6 +278,13 @@ kubectl apply -f ingress-web.yml
 * Use one of the provided data sets in `/data` by running `curl https://<APP-NAME>.<APP-DOMAIN>/api/v1/data -H "Content-Type: application/json" -X PUT -d '@data/<DATA_FILE>'` `<DATA_FILE>` can be either `small-dataset.json` or `large-dataset.json`
 
 12. Use `https://<WEB-NAME>.<WEB-DOMAIN>` to access the React UI.
+
+13. Here are some example messages to send to the chatbot:
+
+* `What comedy shows are on ABC tonight?`
+* `What drama shows do you recommend?`
+* `Tell me more about Game of Thrones`
+* `When is Jeopardy on?`
 
 # License
 
