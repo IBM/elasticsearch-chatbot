@@ -214,15 +214,20 @@ function getRecommendations(entities) {
  * Populates the Elasticsearch database
  * 
  * @param {Number} showCount 
+ * @param {[Object]} shows
  */
-function populateDatabase(showCount) {
+function populateDatabase(showCount, shows) {
     return new Promise(function(resolve, reject) {
-        var showAdded;
         var totalShowsAdded = 0;
         var totalShowsNotAdded = 0;
         var show = 1;
 
-        if (showCount) {
+        if (shows) {
+            for (show = 0; show < shows.length; show++) {
+                addShow(shows[show], shows[show].id);
+            }
+            return resolve(shows.length);
+        } else if (showCount) {
             async.whilst(
                 function () { return show <= showCount; },
                 function (next) {

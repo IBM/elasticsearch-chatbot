@@ -4,6 +4,7 @@ kind: Ingress
 metadata:
   annotations:
     ingress.bluemix.net/redirect-to-https: "True"
+    ingress.bluemix.net/client-max-body-size: size=25m
   name: ingress-elasticsearch-chatbot-app
 spec:
   tls:
