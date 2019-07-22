@@ -21,7 +21,7 @@ After completing this pattern, you will understand how to:
 
 ![](readme_images/cf_architecture.png)
 
-1. User interacts with chatbot from the React UI by asking question via text.
+1. User interacts with chatbot from the React UI of the mobile application by asking a question via text.
 2. React UI sends User's message to the Node.js backend on Cloud Foundry. 
 3. The Node.js backend sends the message to Watson Assistant to determine the intent and entities of the User's message.
 4. The Node.js backend querys the Elasticsearch database based on the intents and entities processed by Watson Assistant.
