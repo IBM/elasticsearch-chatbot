@@ -55,8 +55,8 @@ cd elasticsearch-chatbot
 
 ## 3. Deploy to IBM Cloud
 
-* [Kubernetes](#kubernetes)
-* [Cloud Foundry](#cloud-foundry)
+* [Kubernetes](#kubernetes-1)
+* [Cloud Foundry](#cloud-foundry-1)
 
 ### Kubernetes
 
