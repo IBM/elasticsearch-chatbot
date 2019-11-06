@@ -12,8 +12,6 @@ const assistant = new AssistantV2({
   url: process.env.WATSON_API_URL
 });
 
-var sessionId = "";
-
 /**
  * Creates a new session for interacting with Watson Assistant
  */
@@ -22,8 +20,7 @@ function startSession() {
         assistant.createSession({
             assistant_id: process.env.WATSON_ASSISTANT_ID,
         }).then(response => {
-            sessionId = response.session_id;
-            resolve();
+            resolve({sessionId: response.session_id});
         }).catch(err => {
             reject(err);
         });
@@ -31,29 +28,24 @@ function startSession() {
 }
 
 /**
- * Handles checking if there is a vailf session before senidng the message to Watson Assistant
+ * Switch for Travis testing and production with Watson Assistant
  * 
+ * @param {String} sessionId
  * @param {String} message 
  * @param {Boolean} travis
  */
-function chat(message, travis) {
+function chat(sessionId, message, travis) {
     return new Promise(function(resolve, reject) {
         if (travis) {
             travisTest(message).then(function(response) {
                 resolve(response);
             });
         } else {
-            if (!sessionId) {
-                startSession().then(function() {
-                    sendMessage(message).then(function(response) {
-                        resolve(response);
-                    });
-                })
-            } else {
-                sendMessage(message).then(function(response) {
-                    resolve(response);
-                });
-            }
+            sendMessage(sessionId, message).then(function(response) {
+                resolve(response);
+            }).catch(function(error) {
+                reject(error);
+            });
         }
     })
 }
@@ -61,9 +53,10 @@ function chat(message, travis) {
 /**
  * Sends the message to Watson Assistant and creates the appropriate response
  * 
+ * @param {String} sessionId
  * @param {String} message 
  */
-function sendMessage(message) {
+function sendMessage(sessionId, message) {
     return new Promise(function(resolve, reject) {
         assistant.message({
             assistant_id: process.env.WATSON_ASSISTANT_ID,
@@ -137,12 +130,8 @@ function sendMessage(message) {
                 resolve(jsonResponse);
             }
         }).catch(err => {
-            if (err.message.indexOf("NotFound: session id") > -1) {
-                sessionId = "";
-                chat(message).then(function(response) {
-                    resolve(response);
-                })
-            }
+            console.log(err.message);
+            reject(err);
         });
     })  
 }
@@ -194,3 +183,4 @@ function travisTest(message) {
 }
 
 module.exports.chat = chat;
+module.exports.startSession = startSession;

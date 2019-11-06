@@ -2,7 +2,7 @@ import React from 'react';
 import { ChatFeed, Message } from 'react-chat-ui';
 import {Button, Form, FormGroup, Input, Container, Row, Col} from "reactstrap";
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL;
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || "http://localhost:5000";
 
 class App extends React.Component {
 
@@ -16,8 +16,21 @@ class App extends React.Component {
           message: "Hi! I am Vincent. Ask me questions for information about TV shows or I can make recommendations of TV shows based on what you are interested in.",
           senderName: "Vincent"
         })],
-      input: ""
+      input: "",
+      sessionId: ""
     };
+
+    this.startSession();
+  }
+
+  startSession = async (e) => {
+    if(e) e.preventDefault();
+
+    const response = await fetch(API_BASE_URL+'/api/v1/chat/session');
+
+    var chatbotResponse = await response.json();
+
+    this.setState({sessionId: chatbotResponse["sessionId"]});
   }
 
   send = async (e) => {
@@ -27,9 +40,11 @@ class App extends React.Component {
 
       var addUserMessage = this.state.messages;
 
+      var userMessage = this.state.input;
+
       addUserMessage.push(new Message({
         id: 0,
-        message: this.state.input
+        message: userMessage
       }));
 
       this.setState({messages: addUserMessage,
@@ -38,41 +53,57 @@ class App extends React.Component {
       var chat = document.getElementById("chat");
       chat.scrollTop = chat.scrollHeight;
         
-      const response = await fetch(API_BASE_URL+'/api/v1/chat',{
+      var response = await fetch(API_BASE_URL+'/api/v1/chat',{
         method: "POST",
         headers: {
           "Content-Type": "application/json"
         },
-        body: JSON.stringify({message: this.state.input})
+        body: JSON.stringify({message: userMessage, sessionId: this.state.sessionId})
       });
 
       var chatbotResponse = await response.json();
 
       if (chatbotResponse) {
-        var addBotMessage = this.state.messages;
+        if (chatbotResponse["error"]) {
+          await this.startSession();
 
-        addBotMessage.push(new Message({
-          id: 1,
-          message: chatbotResponse["generic"],
-          senderName: "Vincent"
-        }));
+          response = await fetch(API_BASE_URL+'/api/v1/chat',{
+            method: "POST",
+            headers: {
+              "Content-Type": "application/json"
+            },
+            body: JSON.stringify({message: userMessage, sessionId: this.state.sessionId})
+          });
 
-        if (chatbotResponse["data"]) {
-
-          var chatbotResponseParts = chatbotResponse["data"].split("\n");
-
-          for (var part = 0; part < chatbotResponseParts.length; part++) {
-            addBotMessage.push(new Message({
-              id: 1,
-              message: chatbotResponseParts[part],
-              senderName: "Vincent"
-            }));
-          }
+          chatbotResponse = await response.json();
         }
-        
-        this.setState({messages: addBotMessage});
 
-        chat.scrollTop = chat.scrollHeight;
+        if (chatbotResponse) {
+          var addBotMessage = this.state.messages;
+
+          addBotMessage.push(new Message({
+            id: 1,
+            message: chatbotResponse["generic"],
+            senderName: "Vincent"
+          }));
+
+          if (chatbotResponse["data"]) {
+
+            var chatbotResponseParts = chatbotResponse["data"].split("\n");
+
+            for (var part = 0; part < chatbotResponseParts.length; part++) {
+              addBotMessage.push(new Message({
+                id: 1,
+                message: chatbotResponseParts[part],
+                senderName: "Vincent"
+              }));
+            }
+          }
+          
+          this.setState({messages: addBotMessage});
+
+          chat.scrollTop = chat.scrollHeight;
+        }
       }
     }
   }

@@ -16,7 +16,7 @@ main(){
     if ! sleep 20; then
         test_failed "$0"
     fi
-    if ! curl localhost:5000/api/v1/chat -X POST -H "Content-Type: application/json" -d '{"message": "Game of Thrones", "travis": true}'; then
+    if ! curl localhost:5000/api/v1/chat -X POST -H "Content-Type: application/json" -d '{"sessionId": "1", "message": "Game of Thrones", "travis": true}'; then
         test_failed "$0"
     fi
     test_passed "$0"
