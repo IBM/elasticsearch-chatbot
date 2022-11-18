@@ -7,7 +7,7 @@
     "react": "^16.8.6",
     "react-chat-ui": "^0.3.2",
     "react-dom": "^16.8.6",
-    "react-scripts": "3.0.0",
+    "react-scripts": "5.0.1",
     "reactstrap": "^8.0.0"
   },
   "scripts": {
